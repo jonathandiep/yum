@@ -1,0 +1,46 @@
+body {
+  margin-top: 50px;
+  text-align: center;
+  font-family: "myriad-pro";
+}
+
+.container {
+  margin-top: 25px;
+}
+
+.matches {
+  float: left;
+  margin: 0px 0px 15px 15px;
+}
+
+p {
+  font-size: 16px;
+}
+
+a > .fa-times {
+  color: rgba(255, 0, 11, 0.45);
+}
+
+a > .fa-times:hover {
+  color: rgba(255, 0, 11, 0.80);
+}
+
+a > .fa-heart {
+  color: rgba(0, 213, 104, 0.45);
+}
+
+a > .fa-heart:hover {
+  color: rgba(0, 213, 104, 0.80);
+}
+
+.fa-times {
+  padding-right: 20px;
+}
+
+.fa-heart {
+  padding-left: 20px;
+}
+
+.distance {
+  font-color: rgb(138, 138, 138);
+}
