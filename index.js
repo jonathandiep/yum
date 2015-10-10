@@ -28,7 +28,7 @@ var yelp = require("yelp").createClient({
 
 app.get('/', function(req, res) {
   res.sendFile('/public/index.html');
-})
+});
 
 app.get('/ll/:ll', function(req, res) {
   var ll = req.params.ll;
@@ -42,7 +42,7 @@ app.get('/ll/:ll', function(req, res) {
       res.send(data);
     }
   });
-})
+});
 
 app.listen(port);
 console.log('working');
