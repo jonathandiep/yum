@@ -10,7 +10,7 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
   navigator.geolocation.getCurrentPosition(function(position) {
     ll = position.coords.latitude + ',' + position.coords.longitude;
     console.log(ll);
-    $http.get('http://localhost:3000/ll/' + ll)
+    $http.get('http://localhost:5000/ll/' + ll)
       .then(function(data) {
         $scope.processing = false;
         console.log(data.data);
