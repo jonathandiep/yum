@@ -1,16 +1,10 @@
 body {
-  margin-top: 50px;
   text-align: center;
   font-family: "myriad-pro";
 }
 
 .container {
   margin-top: 25px;
-}
-
-.matches {
-  float: left;
-  margin: 0px 0px 15px 15px;
 }
 
 p {
