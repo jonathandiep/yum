@@ -31,6 +31,7 @@
             <img class="img-rounded" ng-src="{{ picture }}" alt="restaurant picture"/><br/>
             <h2>{{ name }}</h2><br/>
             <p>{{ distance * 0.000621371192 | number:2 }} mi.</p><br/>
+            <p>UberX estimate: {{ uberPrice }}</p>
           </div>
           <a><i class="fa fa-4x fa-times" ng-click="dislike()"></i></a>
           <a><i class="fa fa-3x fa-heart" ng-click="like()"></i></a>

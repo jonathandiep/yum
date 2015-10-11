@@ -19,8 +19,17 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
         $scope.picture = (yelpData.businesses[numValue].image_url).substr(0, yelpData.businesses[numValue].image_url.length - 6) + 'ls.jpg';
         $scope.name = yelpData.businesses[numValue].name;
         $scope.distance = yelpData.businesses[numValue].distance;
+        destLat =  yelpData.businesses[numValue].location.coordinate.latitude;
+        destLong = yelpData.businesses[numValue].location.coordinate.longitude;
+        $http.get('http://localhost:5000/uber/' + ll + ',' + yelpData.businesses[numValue].location.coordinate.latitude + ',' + yelpData.businesses[numValue].location.coordinate.longitude)
+          .then(function(data) {
+            console.log(data.data.prices[0].estimate);
+            $scope.uberPrice = data.data.prices[0].estimate;
+          });
       });
   });
+
+
 
   $scope.dislike = function() {
     if (numValue >= 19) {
@@ -36,6 +45,12 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
   };
 
   $scope.like = function() {
+    $http.get('http://localhost:5000/uber/' + ll + ',' + yelpData.businesses[numValue].location.coordinate.latitude + ',' + yelpData.businesses[numValue].location.coordinate.longitude)
+      .then(function(data) {
+        console.log(data.data.prices[0].estimate);
+        $scope.uberPrice = data.data.prices[0].estimate;
+      });
+
     console.log(yelpData.businesses[numValue].name);
     $scope.matches.push(yelpData.businesses[numValue]);
     $scope.dislike();
