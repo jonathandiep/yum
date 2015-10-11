@@ -26,7 +26,7 @@
 
     <div class="container" ng-hide="processing || hideStuff">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
           <div class="cards">
             <img class="img-rounded" ng-src="{{ picture }}" alt="restaurant picture"/><br/>
             <h2>{{ name }}</h2><br/>
@@ -38,15 +38,13 @@
       </div>
     </div>
 
-    <div class="ng-hide" ng-show="showMatches">
+    <div class="ng-hide matches" ng-show="showMatches">
       <h1><u>Food Matches</u></h1>
 
       <div class="container" ng-repeat="match in matches">
         <div class="row">
-          <div class="col-xs-12">
-            <img class="img-rounded matches" ng-src="{{ (match.image_url).substr(0, match.image_url.length - 6) + 'ls.jpg' }}" alt="restaurant image"/><br/>
-          </div>
-          <div class="col-xs-12">
+          <div class="col-xs-12 col-md-4 col-md-offset-4">
+            <img class="img-rounded" ng-src="{{ (match.image_url).substr(0, match.image_url.length - 6) + 'ls.jpg' }}" alt="restaurant image"/><br/>
             <h3>{{ match.name }}  <span class="distance">({{ match.distance * 0.000621371192 | number:2}} mi)</span></h3>
             <p>{{ match.location.display_address[0] + ' ' + match.location.display_address[2] }}</p>
             <p>Phone: {{ match.display_phone }}</p>
