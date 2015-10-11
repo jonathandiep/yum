@@ -42,15 +42,14 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
       $scope.name = yelpData.businesses[numValue].name;
       $scope.distance = yelpData.businesses[numValue].distance;
     }
-  };
-
-  $scope.like = function() {
     $http.get('http://localhost:5000/uber/' + ll + ',' + yelpData.businesses[numValue].location.coordinate.latitude + ',' + yelpData.businesses[numValue].location.coordinate.longitude)
       .then(function(data) {
         console.log(data.data.prices[0].estimate);
         $scope.uberPrice = data.data.prices[0].estimate;
       });
+  };
 
+  $scope.like = function() {
     console.log(yelpData.businesses[numValue].name);
     $scope.matches.push(yelpData.businesses[numValue]);
     $scope.dislike();
