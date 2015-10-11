@@ -10,7 +10,7 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
   navigator.geolocation.getCurrentPosition(function(position) {
     ll = position.coords.latitude + ',' + position.coords.longitude;
     console.log(ll);
-    $http.get('$https://calhacks-yum.herokuapp.com/ll/' + ll)
+    $http.get('https://calhacks-yum.herokuapp.com/ll/' + ll)
       .then(function(data) {
         $scope.processing = false;
         console.log(data.data);
