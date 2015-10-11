@@ -21,7 +21,7 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
         $scope.distance = yelpData.businesses[numValue].distance;
         destLat =  yelpData.businesses[numValue].location.coordinate.latitude;
         destLong = yelpData.businesses[numValue].location.coordinate.longitude;
-        $http.get('http://localhost:5000/uber/' + ll + ',' + yelpData.businesses[numValue].location.coordinate.latitude + ',' + yelpData.businesses[numValue].location.coordinate.longitude)
+        $http.get('https://calhacks-yum.herokuapp.com/uber/' + ll + ',' + yelpData.businesses[numValue].location.coordinate.latitude + ',' + yelpData.businesses[numValue].location.coordinate.longitude)
           .then(function(data) {
             console.log(data.data.prices[0].estimate);
             $scope.uberPrice = data.data.prices[0].estimate;
